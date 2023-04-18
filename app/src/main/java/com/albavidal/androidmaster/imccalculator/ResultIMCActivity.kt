@@ -34,7 +34,7 @@ class ResultIMCActivity : AppCompatActivity() {
         when(result){
             in 0.00..18.50 -> { //Bajo peso
                 tvResult.text = getString(R.string.title_bajo_peso)
-                tvResult.setTextColor(ContextCompat.getColor(this,R.color.peso_bajo))
+                tvResult.setTextColor(ContextCompat.getColor(this, R.color.peso_bajo))
                 tvDescription.text = getString(R.string.description_bajo_peso)
             }
             in 18.50..24.99 -> { //Peso normal
