@@ -1,6 +1,6 @@
 package com.albavidal.androidmaster.imccalculator
 
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -63,7 +63,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         btnCalculate = findViewById(R.id.btnCalculate)
     }
 
-    @SuppressLint("SetTextI18n")
+
     private fun initListeners() {
         //setOnClickListener {  } -> función que espera escuchar un click
         viewMale.setOnClickListener {
@@ -77,7 +77,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
         rsHeight.addOnChangeListener { _, value, _ ->
 
             val df = DecimalFormat("#.##")
-            currentHeight = (df.format(value)).toInt()
+            currentHeight = df.format(value).toInt()
             tvHeight.text = "$currentHeight cm"
         }
 
@@ -115,7 +115,7 @@ class ImcCalculatorActivity : AppCompatActivity() {
 
     private fun calculateImc():Double {
         val df = DecimalFormat("#.##")
-        val imc = currentWeight/(currentHeight.toDouble()/100 )* (currentHeight.toDouble()/100)
+        val imc = currentWeight/(currentHeight.toDouble()/100 * currentHeight.toDouble()/100)
         return df.format(imc).toDouble()
         //error de calcul de decimal per aqui??
 
